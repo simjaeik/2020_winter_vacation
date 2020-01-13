@@ -1,0 +1,4 @@
+﻿  quiz02.cpp
+C:\Users\Jeaik\Desktop\IK\10. git\2020_winter_vacation\K_Algorithm\exercise_02\quiz02\quiz02\quiz02.cpp(14,17): warning C4101:  'len': unreferenced local variable
+C:\Users\Jeaik\Desktop\IK\10. git\2020_winter_vacation\K_Algorithm\exercise_02\quiz02\quiz02\quiz02.cpp(14,7): warning C4101:  'word_len': unreferenced local variable
+C:\Users\Jeaik\Desktop\IK\10. git\2020_winter_vacation\K_Algorithm\exercise_02\quiz02\quiz02\quiz02.cpp(11): error C4700:  uninitialized local variable 'n' used
