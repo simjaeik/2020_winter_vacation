@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 
-void set_output(int num);
+void set_output(int word_len, int len, int num);
 
 int main() {
 	int N;
@@ -18,15 +18,20 @@ int main() {
 		inFile >> len;
 		inFile >> num;
 
-		set_output(num);
+		set_output(word_len, len, num);
 
 
 	}
 
 }
 
-void set_output(int num) {
+void set_output(int word_len, int len, int num) {
+	if (len <= num) {
+		std::ofstream outFile("output2.txt");
+		return;
+	}
+	else {
 
-	std::ofstream outFile("output2.txt");
+	}
 
 }
