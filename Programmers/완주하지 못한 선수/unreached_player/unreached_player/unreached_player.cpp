@@ -20,7 +20,7 @@ string solution(vector<string> participant, vector<string> completion) {
 	}
 
 	while (!participant.empty()) {
-		if (map[participant.back()] == 0) // participant에 없다면
+		if (map[participant.back()] == 0) 
 			return participant.back();
 
 		map[participant.back()]--;
