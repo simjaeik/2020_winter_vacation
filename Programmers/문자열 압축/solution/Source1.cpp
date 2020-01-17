@@ -53,5 +53,7 @@ int solution(string s) {
 
 int main() {
 
+	std::string a = "hello";
 	std::cout << solution("aabbcbbb");
+	std::cout << a.substr(2);
 }
