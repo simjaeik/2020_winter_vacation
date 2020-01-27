@@ -1,37 +1,35 @@
 #include <iostream>
 #include <vector>
-#include <string>
-#include <algorithm>
+#include <set>
 
 int solution(int n, std::vector<int> lost, std::vector<int> reserve) {
 	int answer = n;
+	std::vector<int> lost_compare = lost;
+	std::set<int> reserve_set;
 
-	//std::reverse(lost.begin(), lost.end());
-	//std::reverse(reserve.begin(), reserve.end());
+	for (auto a : reserve)
+		reserve_set.insert(a);
+		
+	while (!lost_compare.empty()) {
 
-	for (auto a : lost) {
-
-		for (auto b : reserve) {
-			if (a == b - 1 || a == b + 1) {	// can borrow
-				reserve.erase(reserve.begin(), reserve.begin() + 1);
-				lost.erase(lost.begin(), lost.begin() + 1);
-				continue;
-			}
-			else if (b < a - 1) {
-				reserve.erase(reserve.begin(), reserve.begin() + 1);
-			}
-			else if (b > a + 1)
-				break;
+		if (reserve_set.find(lost_compare.back() + 1) != reserve_set.end()) {// is exists
+			reserve_set.erase(lost_compare.back() + 1);
+			lost.pop_back();
 		}
+		else if (reserve_set.find(lost_compare.back() - 1) != reserve_set.end()) {// is exists
+			reserve_set.erase(lost_compare.back() - 1);
+			lost.pop_back();
+		}
+		lost_compare.pop_back();
 	}
 
 	return answer - lost.size();
 }
 int main() {
 
-	std::vector<int> a = { 2,4 };
-	std::vector<int> b = { 1,3,5 };
+	std::vector<int> a = { };
+	std::vector<int> b = {  };
 
-	std::cout << solution(5, a, b);
+	std::cout << solution(3, a, b);
 
-}hi
+}
