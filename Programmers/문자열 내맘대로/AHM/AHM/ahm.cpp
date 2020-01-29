@@ -5,8 +5,11 @@
 
 int num;
 
-bool cmp(const std::string& a, const std::string& b) {
-	return a[num] <= b[num];
+bool cmp(const std::string a, const std::string b) {
+	if (a[num] == b[num])
+		return a < b;
+
+	return a[num] < b[num];
 }
 
 std::vector<std::string> solution(std::vector<std::string> strings, int n) {
