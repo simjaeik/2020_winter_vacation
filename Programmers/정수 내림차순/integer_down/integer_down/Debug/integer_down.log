@@ -1,0 +1,3 @@
+﻿  integer_down.cpp
+c:\users\오동의\source\repos\integer_down\integer_down\integer_down.cpp(10): warning C4244: '=': 'double'에서 '__int64'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  integer_down.vcxproj -> C:\Users\오동의\Source\Repos\integer_down\Debug\integer_down.exe
