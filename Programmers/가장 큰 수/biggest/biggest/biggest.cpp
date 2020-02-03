@@ -3,56 +3,33 @@
 #include <algorithm>
 #include <iostream>
 
-bool cmp(int a, int b) {
-	std::string a_s = std::to_string(a);
-	std::string b_s = std::to_string(b);
-
-	std::cout << a_s << " " << b_s << std::endl;
-
-	if (a_s.length() == b_s.length())
-		return a > b;
-
-	int len = std::min(a_s.length(), b_s.length());
-
-	if (a_s.length() > b_s.length()) {
-		a = a_s[len] - '0';
-		b = b_s[0] - '0';
-		a_s=a_s.substr(0, len);
-	}
-	else {
-		b = b_s[len] - '0';
-		a = a_s[0] - '0';
-		b_s=b_s.substr(0, len);
-	}
-	std::cout << a_s << " -- " << b_s <<" "<< a << " " << b << std::endl;
-
-	if (std::stoi(a_s) > std::stoi(b_s)) {
-		std::cout << a_s << std::endl;
-		return std::stoi(a_s) > std::stoi(b_s);
-	}
-	else if (std::stoi(a_s) < std::stoi(b_s)) {
-		std::cout << b_s << std::endl;
-		return std::stoi(a_s) < std::stoi(b_s);
-	}
-	std::cout << a << " " << b << std::endl;
-
-	return a > b;
-
+bool cmp(const std::string& a, const std::string& b) {
+	if (b + a < a + b)
+		return true;
+	return false;
 }
 
 std::string solution(std::vector<int> numbers) {
 	std::string answer = "";
-
-	std::sort(numbers.begin(), numbers.end(), cmp);
+	std::vector<std::string> str;
 
 	for (auto a : numbers)
-		answer += std::to_string(a);
+		str.push_back(std::to_string(a));
+
+	std::sort(str.begin(), str.end(), cmp);
+
+	for (auto a : str)
+		answer += a;
+
+	if (answer[0] == '0')
+		return "0";
 
 	return answer;
 }
 
 int main() {
-	std::vector<int> a = { 3, 30, 34, 5, 9 };
+	std::vector<int> a = {0, 0, 0 };
 
 	std::cout<<solution(a);
+
 }
