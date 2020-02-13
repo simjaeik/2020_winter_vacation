@@ -3,33 +3,14 @@
 #include <algorithm>
 #include <cmath>
 #include <iostream>
+#include <set>
 
 using namespace std;
-
-bool is_number(string numbers, int a) {
-	vector<int> cmp;
-	int cnt = 0;
-	int len = to_string(a).length();
-
-	for (int i = 0; i < numbers.length(); i++)
-		cmp.push_back(numbers[i] - '0');
-
-	while (a != 0 && !cmp.empty()) {
-		if (find(cmp.begin(), cmp.end(), a % 10) != cmp.end()) {
-			cnt++;
-			cmp.erase(find(cmp.begin(), cmp.end(), a % 10));
-		}
-		a /= 10;
-	}
-
-	return cnt == len ? true : false;
-
-}
 
 int solution(string numbers) {
 	int answer = 0;
 	vector<int> num(pow(10, numbers.length()));
-
+	num[0] = 1, num[1] = 1, num[2] = 1;
 
 	for (int i = 2; i * i < pow(10, numbers.length()); i++) {
 		if (num[i] == 1)
@@ -38,19 +19,26 @@ int solution(string numbers) {
 			num[j] = 1;
 	}
 
-	for (int i = 2; i < pow(10, numbers.length()); i++) {
-		if (num[i] == 0) {
-			if (is_number(numbers, i)) {
-				answer++;
-				cout << i << endl;
+	sort(numbers.begin(), numbers.end());
+	set<int> ans;
+
+	do{
+		string sub = numbers;
+		for (int i = 1; i <= numbers.length(); i++) {
+			cout << sub.substr(0, i) << endl;
+			if (num[stoi(sub.substr(0, i))] == 0) {
+				ans.insert(stoi(sub.substr(0, i)));
 			}
 		}
-	}
+	} while (next_permutation(numbers.begin(),numbers.end()));
 
-	return answer;
+
+
+	return ans.size();
 }
 
 int main() {
 
-	solution("17");
+	cout << solution("17");
+
 }
