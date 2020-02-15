@@ -26,4 +26,4 @@ int main() {
 
 	cout << a.find("-");
 }
-// ÇÏ´ÂÁß
+// incomplete
