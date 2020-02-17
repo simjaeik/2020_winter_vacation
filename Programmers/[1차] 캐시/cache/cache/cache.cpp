@@ -50,12 +50,12 @@ int solution(int cacheSize, vector<string> cities) {
 			answer += 5;
 		}
 		else {
-			cache.erase(itr, itr + 1);
+			cache.erase(itr);
 			cache.push_back(city);
 			answer += 1;
 		}
 
-		if (cache.size() > cacheSize) cache.erase(cache.begin(), cache.begin() + 1);
+		if (cache.size() > cacheSize) cache.erase(cache.begin());
 	}
 
 	return answer;
