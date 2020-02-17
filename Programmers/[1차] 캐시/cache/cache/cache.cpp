@@ -4,7 +4,6 @@
 #include <iostream>
 #include <algorithm>
 
-using namespace std;
 //
 //int solution(int cacheSize, vector<string> cities) {
 //	int answer = 0;
@@ -36,7 +35,6 @@ using namespace std;
 //	return answer;
 //}
 
-
 using namespace std;
 
 int solution(int cacheSize, vector<string> cities) {
@@ -44,7 +42,7 @@ int solution(int cacheSize, vector<string> cities) {
 	vector<string> cache;
 
 	for (auto city : cities) {
-		transform(city.begin(), city.end(), city.begin(), (int(*)(int))tolower );
+		transform(city.begin(), city.end(), city.begin(), (int(*)(int))tolower);
 
 		vector<string>::iterator itr = find(cache.begin(), cache.end(), city);
 		if (itr == cache.end()) {
@@ -52,11 +50,13 @@ int solution(int cacheSize, vector<string> cities) {
 			answer += 5;
 		}
 		else {
-			cache.erase(itr, itr);
+			cache.erase(itr, itr + 1);
+			cache.push_back(city);
+			answer += 1;
 		}
 
+		if (cache.size() > cacheSize) cache.erase(cache.begin(), cache.begin() + 1);
 	}
-
 
 	return answer;
 }
@@ -65,7 +65,7 @@ int main() {
 	vector<string> b = { "JeaSFu", "JeaSFu", "JeaSFu", "JeaSF1u", "JeaSFu", "JeaSFu" };
 	vector<string>::iterator itr = find(b.begin(), b.end(), "JeaSF1u");
 
-	b.erase(itr, itr+1);
+	b.erase(itr, itr + 1);
 
 	for (auto a : b)
 		cout << a << endl;
