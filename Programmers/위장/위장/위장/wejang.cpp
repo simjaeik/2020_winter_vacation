@@ -67,8 +67,14 @@ int main() {
 
 	b.erase(itr, itr+1);
 
+<<<<<<< HEAD
 	for (auto a : b)
 		cout << a << endl;
 
 	//cout<<solution(1, b);
 }
+=======
+	cout << a.find("-");
+}
+// incomplete
+>>>>>>> adbd4089d2599f53cf701949d0c8e8769674bec4
