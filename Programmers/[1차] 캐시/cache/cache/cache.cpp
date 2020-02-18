@@ -42,7 +42,7 @@ int solution(int cacheSize, vector<string> cities) {
 	vector<string> cache;
 
 	for (auto city : cities) {
-		transform(city.begin(), city.end(), city.begin(), (int(*)(int))tolower);
+		transform(city.begin(), city.end(), city.begin(), ::tolower);
 
 		vector<string>::iterator itr = find(cache.begin(), cache.end(), city);
 		if (itr == cache.end()) {
@@ -50,12 +50,12 @@ int solution(int cacheSize, vector<string> cities) {
 			answer += 5;
 		}
 		else {
-			cache.erase(itr, itr + 1);
+			cache.erase(itr);
 			cache.push_back(city);
 			answer += 1;
 		}
 
-		if (cache.size() > cacheSize) cache.erase(cache.begin(), cache.begin() + 1);
+		if (cache.size() > cacheSize) cache.erase(cache.begin());
 	}
 
 	return answer;
