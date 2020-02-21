@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-
+#include <string>
 using namespace std;
 
 bool find_seoroso(int a, int b, int c) {
@@ -18,15 +18,14 @@ bool find_seoroso(int a, int b, int c) {
 }
 
 int main() {
-	int count = 0;
+	int a = 3;
+	string str = "";
 
-	for (int i = 2; i < 99; i++) {
-		for (int j = i + 1; j < 100; j++) {
-			for (int k = j + 1; k <= 100; k++) {
-				if (find_seoroso(i, j, k))
-					count++;
-			}
-		}
+	for (int i = 0; i < 3; i++)
+	{
+		str += to_string(a);
 	}
-	cout << count;
+	
+
+	cout << str;
 }
