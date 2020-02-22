@@ -29,7 +29,8 @@ int main(int argc, char** argv)
 				cin >> is_or_not;
 				tmp.push_back(is_or_not);
 				if (is_or_not == 0) score[j]++;
-				// ¸î°³ ¸ÂÃè´ÂÁö ÀÛ¼ºÁß ( how_many )
+				// ëª‡ê°œ ë§ì·„ëŠ”ì§€ ì‘ì„±ì¤‘ ( how_many )
+				// 20200222 still can't solve this problem
 			}
 			players.push_back(tmp);
 		}
@@ -51,5 +52,5 @@ int main(int argc, char** argv)
 
 
 	}
-	return 0;//Á¤»óÁ¾·á½Ã ¹İµå½Ã 0À» ¸®ÅÏÇØ¾ßÇÕ´Ï´Ù.
+	return 0;//ì •ìƒì¢…ë£Œì‹œ ë°˜ë“œì‹œ 0ì„ ë¦¬í„´í•´ì•¼í•©ë‹ˆë‹¤.
 }
