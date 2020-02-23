@@ -34,7 +34,12 @@ int main(int argc, char** argv)
 				int is_or_not = getchar()-'0'; 
 				tmp.push_back(is_or_not);
 				if (is_or_not == 0) score[j]++;
+<<<<<<< HEAD
 				else if (is_or_not == 1) how_many[i]++;
+=======
+				// ëª‡ê°œ ë§ì·„ëŠ”ì§€ ì‘ì„±ì¤‘ ( how_many )
+				// 20200222 still can't solve this problem
+>>>>>>> 1a5a57f86e47b1d69c0b88462e3b0165316e3033
 			}
 			players.push_back(tmp);
 		}
@@ -58,5 +63,5 @@ int main(int argc, char** argv)
 		printf("#%d %d %d\n", tc, score_p[P - 1], answer + 1);
 
 	}
-	return 0;//Á¤»óÁ¾·á½Ã ¹İµå½Ã 0À» ¸®ÅÏÇØ¾ßÇÕ´Ï´Ù.
+	return 0;//ì •ìƒì¢…ë£Œì‹œ ë°˜ë“œì‹œ 0ì„ ë¦¬í„´í•´ì•¼í•©ë‹ˆë‹¤.
 }
