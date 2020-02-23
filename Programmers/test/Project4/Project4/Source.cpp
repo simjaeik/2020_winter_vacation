@@ -18,14 +18,15 @@ bool find_seoroso(int a, int b, int c) {
 }
 
 int main() {
-	int a = 3;
-	string str = "";
+	int num[5];
+	int T = getchar() - '0'; getchar();
 
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 5; i++)
 	{
-		str += to_string(a);
+		num[i] = getchar() - '0'; getchar();
 	}
-	
 
-	cout << str;
+	for (auto a : num)
+		cout << a << endl;
+	cout << T;
 }
