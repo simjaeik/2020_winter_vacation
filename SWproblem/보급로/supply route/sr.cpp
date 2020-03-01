@@ -65,6 +65,7 @@
 //	return 0;//정상종료시 반드시 0을 리턴해야합니다.
 //}
 
+#pragma warning (disable:4996)
 #include<iostream>
 #include <queue>
 #include <vector>
@@ -94,14 +95,17 @@ int solve() {
 			int ny = y + dir[i][1];
 
 			if (nx < 0 || ny < 0 || nx >= N || ny >= N) continue;
-			if( d[nx][ny] > d[x][y] + map[nx][ny] )
+			if (d[nx][ny] > d[x][y] + map[nx][ny]) {
+				q.push({ nx, ny });
+				d[nx][ny] = d[x][y] + map[nx][ny];
+			}
 
 
 		}
 
 	}
 
-
+	return d[N- 1][N - 1];
 }
 
 int main(int argc, char** argv)
@@ -121,11 +125,7 @@ int main(int argc, char** argv)
 			}
 		}
 
-
 		answer = solve();
-
-
-
 
 		cout << "#" << test_case << " " << answer << endl;
 	}
