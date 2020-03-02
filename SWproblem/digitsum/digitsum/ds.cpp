@@ -13,12 +13,12 @@ int main(int argc, char** argv)
 	cin >> T;
 	
 	for (test_case = 1; test_case <= T; ++test_case){
-		int N;
+		long long N;
 		cin >> N;
 
 		while (N >= 10) {
-			int num = N;
-			int tmp=0;
+			long long num = N;
+			long long tmp=0;
 			while (num != 0) {
 				tmp += num % 10;
 				num /= 10;
