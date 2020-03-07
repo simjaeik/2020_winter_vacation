@@ -14,8 +14,7 @@ void dfs(string now, int chn) {
 		done = 1;
 		return;
 	}
-	else if (now == max_num && (chance - chn) % 2 == 1 && flag == 0) {
-		flag++;
+	else if (now == max_num && (chance - chn) % 2 == 1) {
 		dfs(now, chance - 1);
 		done = 1;
 		return;
@@ -70,7 +69,7 @@ int main(int argc, char** argv)
 		dfs(num, 0);
 
 		cout << "#" << test_case << " " << stoi(cmp) << endl;
-		done = 0, flag=0;
+		done = 0;
 	}
 	return 0;//정상종료시 반드시 0을 리턴해야합니다.
 }
