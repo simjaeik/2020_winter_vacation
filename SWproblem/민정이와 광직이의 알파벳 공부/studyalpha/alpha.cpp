@@ -5,26 +5,25 @@
 #include <set>
 
 using namespace std;
-map<char,int> chk;
+map<char, int> chk;
 set<string> ans;
 int answer = 0, N;
 vector<string> word;
 vector<bool> visited;
 
 void dfs(int n, string tmp) {
-	
 
-		if (chk.size() == 26) {
-			ans.insert(tmp);
-			cout << tmp << endl;
-		}
-		if (n >= N)
-			return;
+
+	if (chk.size() == 26) {
+		ans.insert(tmp);
+	}
+	if (n >= N)
+		return;
 
 	for (int i = n; i < N; i++) {
 		for (int j = 0; j < word[i].length(); j++)
 			chk[word[i][j]]++;
-		dfs(i+1, tmp+word[i]);
+		dfs(i + 1, tmp + word[i]);
 		for (int j = 0; j < word[i].length(); j++) {
 			chk[word[i][j]]--;
 			if (chk[word[i][j]] <= 0)
@@ -38,10 +37,10 @@ int main(int argc, char** argv)
 {
 	int test_case;
 	int T;
-	
+
 	cin >> T;
-	
-	for (test_case = 1; test_case <= T; ++test_case){
+
+	for (test_case = 1; test_case <= T; ++test_case) {
 		cin >> N;
 
 		word.clear();
