@@ -73,6 +73,6 @@ int main() {
 	std::vector<int> b = { 1,2,3,6 };
 
 	std::cout << solution(7, a, b);
->>>>>>> f1a339d78ac7156a51c45e477eb6143bcd4c85c6
+
 
 }
