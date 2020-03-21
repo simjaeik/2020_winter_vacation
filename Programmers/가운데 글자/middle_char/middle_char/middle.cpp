@@ -13,5 +13,8 @@ std::string solution(std:: string s) {
 }
 
 int main() {
-    std::cout << solution("qweasdfasr");
+    //std::cout << solution("qweasdfasr");
+
+    std::string a = "hello";
+    std::cout << a.substr(2,2);
 }
