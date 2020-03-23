@@ -5,23 +5,20 @@ using namespace std;
 
 int m_floor=-1, m_ceiling=-1;
 
-void get_f_c(vector<int> nums, int begin, int target) {
+void get_f_c(vector<int> nums, int begin, int ceil, int flor, int target) {
 
-	if (begin >= nums.size()) 
-		return;
-	else if (nums[begin] > target) {
-		m_floor = nums[begin];
-		if (begin - 1 >= 0)
-			m_ceiling = nums[begin - 1];
-		return;
-	}
-	else if (nums[begin] == target) {
-		m_floor = nums[begin];
-		m_ceiling = nums[begin];
+	if (begin >= nums.size()) {
+		m_floor = flor;
+		m_ceiling = ceil;
 		return;
 	}
 
-	get_f_c(nums, begin + 1, target);
+	if (nums[begin] == target)
+		get_f_c(nums, nums.size(), target, target, target);
+	else if (nums[begin] > target)
+		get_f_c(nums, nums.size(), ceil, nums[begin], target);
+	else
+		get_f_c(nums, begin + 1, nums[begin], flor, target);
 }
 
 int main() {
@@ -34,7 +31,7 @@ int main() {
 		cin >> nums[i];
 	cin >> K;
 
-	get_f_c(nums, 0, K);
+	get_f_c(nums, 0, -1, -1, K);
 
 	cout << m_floor << " " << m_ceiling << endl;
 }
