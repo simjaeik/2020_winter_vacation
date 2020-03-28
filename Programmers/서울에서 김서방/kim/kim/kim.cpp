@@ -7,7 +7,7 @@ std::string solution(std::vector<std::string> seoul) {
 	for (int i = 0; i < seoul.size(); i++)
 	{
 		if (seoul[i].compare("Kim") == 0 )
-			answer = "�輭���� "+ std::to_string(i+1)+"�� �ִ�";
+			answer = "±è¼­¹æÀº "+ std::to_string(i+1)+"¿¡ ÀÖ´Ù";
 	}
 
 	return answer;
@@ -18,3 +18,4 @@ int main() {
 
 	std::cout << solution(a);
 }
+//완료
