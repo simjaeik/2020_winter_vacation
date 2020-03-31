@@ -32,10 +32,11 @@ int main(int argc, char** argv)
 		if (dif_min > 0)
 			dif_min = 0;
 		else
-			dif_min *= -1;
+			dif_min *= -
 
 		if (dif_max < 0)
 			dif_max = 0;
+
 
 		cout << "#" << test_case << " " << dif_max << " " << dif_min << endl;
 	}
