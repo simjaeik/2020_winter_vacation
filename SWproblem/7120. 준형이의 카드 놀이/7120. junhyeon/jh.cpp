@@ -26,11 +26,9 @@ int main(int argc, char** argv)
         for(int i=0; i<=N+M; i++)
             nums.push_back(make_pair(i,0));
         
-        for(int i = 1; i<=N;i++){
-         for(int j=1;j<=M;j++){
+        for(int i = 1; i<=N;i++)
+         for(int j=1;j<=M;j++)
          		nums[i+j].second++;
-         }
-        }
         
         sort(nums.begin(), nums.end(), cmp);
 		
@@ -49,7 +47,7 @@ int main(int argc, char** argv)
         nums.clear();
         ans.clear();
         
-}
-	return 0;//Á¤»óÁ¾·á½Ã ¹Ýµå½Ã 0À» ¸®ÅÏÇØ¾ßÇÕ´Ï´Ù.
+	}
+	return 0;//ì •ìƒì¢…ë£Œì‹œ ë°˜ë“œì‹œ 0ì„ ë¦¬í„´í•´ì•¼í•©ë‹ˆë‹¤.
 
 }
