@@ -36,6 +36,20 @@ int main(int argc, char** argv)
 			ans++;
 		}
 		cout << "#" << test_case << " " << ans << endl;
+<<<<<<< HEAD
 	}
 	return 0;//정상종료시 반드시 0을 리턴해야합니다.
 }
+=======
+	}*/
+
+	vector<int> a = { 3,4,5 };
+	
+	a.erase(a.end()-1);
+	
+	for (auto i : a)
+		cout << i << endl;
+
+	return 0;
+}
+>>>>>>> ce31e43c2d99ad52ea33d2ef21492bb38f34944b
