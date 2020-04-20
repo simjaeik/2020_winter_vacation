@@ -6,7 +6,7 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-	/*int test_case;
+	int test_case;
 	int T;
 
 	cin >> T;
@@ -22,27 +22,20 @@ int main(int argc, char** argv)
 
 		sort(boxes.rbegin(), boxes.rend());
 
-		for (int i = 0; i < N; i++) {
-			int box = boxes[i];
+		while (!boxes.empty()) {
+			int box = boxes[0];
+			boxes.erase(boxes.begin());
 			if (box < 50) {
-				for (int j = 0; j < 50 / box; j++) {
+				if (boxes.size() < 50 / (box + 1))
+					break;
+				for (int j = 0; j < 50 / (box + 1); j++) {
 					if (!boxes.empty())
 						boxes.erase(boxes.end() - 1);
 				}
 			}
-			if (!boxes.empty())
-				boxes.erase(boxes.begin());
 			ans++;
 		}
 		cout << "#" << test_case << " " << ans << endl;
-	}*/
-
-	vector<int> a = { 3,4,5 };
-	
-	a.erase(a.end()-1);
-	
-	for (auto i : a)
-		cout << i << endl;
-
+	}
 	return 0;//정상종료시 반드시 0을 리턴해야합니다.
 }
