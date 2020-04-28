@@ -1,11 +1,17 @@
 #include<iostream>
 #include<vector>
 #include<algorithm>
-
+#include<vector>
+#include<string>
 using namespace std;
+
+bool cmp(int a, int b) {
+	return a > b;
+}
 
 int main(int argc, char** argv)
 {
+
 	int test_case;
 	int T;
 
@@ -42,4 +48,5 @@ int main(int argc, char** argv)
 		cout << "#" << test_case << " " << ans2 << " " << ans1 << endl;
 	}
 	return 0;//정상종료시 반드시 0을 리턴해야합니다.
+
 }
